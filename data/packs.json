@@ -1,0 +1,22 @@
+[
+  {
+    "id": "spr",
+    "name": "☆SPR",
+    "subpacks": [
+      "spr__1",
+      "spr__2",
+      "spr__3"
+    ]
+  },
+  {
+    "id": "zaimou",
+    "name": "再谋篇",
+    "subpacks": [
+      "zm__zhi",
+      "zm__shi",
+      "zm__tong",
+      "zm__yu",
+      "zm__neng"
+    ]
+  }
+]

@@ -1,0 +1,542 @@
+[
+  {
+    "id": "spr__machao",
+    "code": "☆SPR 001",
+    "name": "星马超",
+    "gender": "男性",
+    "title": "杵枪摧敌",
+    "kingdom": "群",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "spr__jinzi",
+      "spr__shichou"
+    ],
+    "designer": "Newaser",
+    "image": "spr__machao",
+    "derivativeImages": [
+      "spr__machao#0"
+    ]
+  },
+  {
+    "id": "spr__zhugeliang",
+    "code": "☆SPR 002",
+    "name": "星诸葛亮",
+    "gender": "男性",
+    "title": "过江说盟",
+    "kingdom": "蜀",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "spr__miaobian",
+      "spr__zhijue"
+    ],
+    "designer": "Newaser",
+    "image": "spr__zhugeliang"
+  },
+  {
+    "id": "spr__guanyu",
+    "code": "☆SPR 003",
+    "name": "星关羽",
+    "gender": "男性",
+    "title": "单骑千里",
+    "kingdom": "魏",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "wusheng",
+      "spr__nuzhan",
+      "spr__nianen"
+    ],
+    "designer": "Newaser",
+    "image": "spr__guanyu"
+  },
+  {
+    "id": "spr__xuyou",
+    "code": "☆SPR 004",
+    "name": "星许攸",
+    "gender": "男性",
+    "title": "居功自傲",
+    "kingdom": "魏",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "spr__qingman",
+      "spr__shigong",
+      "spr__siyan"
+    ],
+    "designer": "Newaser",
+    "image": "spr__xuyou"
+  },
+  {
+    "id": "spr__shenpei",
+    "code": "☆SPR 005",
+    "name": "星审配",
+    "gender": "男性",
+    "title": "正南义北",
+    "kingdom": "群",
+    "hp": 2,
+    "maxHp": 3,
+    "skills": [
+      "spr__liezhi",
+      "spr__shouye"
+    ],
+    "designer": "Newaser",
+    "image": "spr__shenpei"
+  },
+  {
+    "id": "spr__caozhang",
+    "code": "☆SPR 006",
+    "name": "星曹彰",
+    "gender": "男性",
+    "title": "神勇壮猛",
+    "kingdom": "魏",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "spr__jiangchi"
+    ],
+    "designer": "Newaser",
+    "image": "spr__caozhang"
+  },
+  {
+    "id": "spr__guohuai",
+    "code": "☆SPR 007",
+    "name": "星郭淮",
+    "gender": "男性",
+    "title": "垂问秦淮",
+    "kingdom": "魏",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "spr__jingce"
+    ],
+    "designer": "Newaser",
+    "image": "spr__guohuai"
+  },
+  {
+    "id": "spr__zoushi",
+    "code": "☆SPR 008",
+    "name": "星邹氏",
+    "gender": "女性",
+    "title": "醉琴卧花",
+    "kingdom": "群",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "spr__xunxin",
+      "spr__zhenxia"
+    ],
+    "designer": "Newaser",
+    "image": "spr__zoushi"
+  },
+  {
+    "id": "spr__zhangliao",
+    "code": "☆SPR 009",
+    "name": "星张辽",
+    "gender": "男性",
+    "title": "踏锋饮血",
+    "kingdom": "群",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "spr__cuorui",
+      "spr__tafeng"
+    ],
+    "designer": "Newaser",
+    "image": "spr__zhangliao"
+  },
+  {
+    "id": "spr__luoxian",
+    "code": "☆SPR 010",
+    "name": "星罗宪",
+    "gender": "男性",
+    "title": "介然毕命",
+    "kingdom": "蜀",
+    "subkingdom": "魏",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "spr__yongan",
+      "spr__juxi",
+      "spr__xuzhong"
+    ],
+    "designer": "Newaser",
+    "image": "spr__luoxian"
+  },
+  {
+    "id": "spr__chendao",
+    "code": "☆SPR 011",
+    "name": "星陈到",
+    "gender": "男性",
+    "title": "白毦督",
+    "kingdom": "蜀",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "spr__wanglie",
+      "spr__baier"
+    ],
+    "designer": "Newaser",
+    "image": "spr__chendao"
+  },
+  {
+    "id": "spr__chengui",
+    "code": "☆SPR 012",
+    "name": "星陈珪",
+    "gender": "男性",
+    "title": "弄辞成掇",
+    "kingdom": "群",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "spr__guimou",
+      "spr__congshi"
+    ],
+    "designer": "Newaser",
+    "image": "spr__chengui"
+  },
+  {
+    "id": "spr__chenwudongxi",
+    "code": "☆SPR 013",
+    "name": "星陈武董袭",
+    "gender": "男性",
+    "title": "殒身不恤",
+    "kingdom": "吴",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "spr__shangjia",
+      "spr__duanxie",
+      "spr__fenming"
+    ],
+    "designer": "Newaser",
+    "image": "spr__chenwudongxi"
+  },
+  {
+    "id": "spr__caochun",
+    "code": "☆SPR 014",
+    "name": "星曹纯",
+    "gender": "男性",
+    "title": "锐兵坚甲",
+    "kingdom": "魏",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "spr__shanjia"
+    ],
+    "designer": "Newaser",
+    "image": "spr__caochun"
+  },
+  {
+    "id": "spr__wangtaowangyue",
+    "code": "☆SPR 015",
+    "name": "星王桃王悦",
+    "gender": "女性",
+    "title": "春悦桃秾",
+    "kingdom": "蜀",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "spr__shuangbi",
+      "spr__tongzheng"
+    ],
+    "designer": "Newaser",
+    "image": "spr__wangtaowangyue"
+  },
+  {
+    "id": "spr__sunchen",
+    "code": "☆SPR 016",
+    "name": "星孙綝",
+    "gender": "男性",
+    "title": "食髓的朝堂客",
+    "kingdom": "吴",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "spr__xiongju",
+      "spr__shanfei"
+    ],
+    "designer": "Newaser",
+    "image": "spr__sunchen"
+  },
+  {
+    "id": "spr__zhaoyun",
+    "code": "☆SPR 017",
+    "name": "星赵云",
+    "gender": "男性",
+    "title": "威名尽显",
+    "kingdom": "群",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "longdan",
+      "spr__yicong",
+      "spr__chongzhen"
+    ],
+    "designer": "Newaser",
+    "image": "spr__zhaoyun"
+  },
+  {
+    "id": "spr__yuejin",
+    "code": "☆SPR 018",
+    "name": "星乐进",
+    "gender": "男性",
+    "title": "奋强突固",
+    "kingdom": "魏",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "spr__xiaoguo",
+      "spr__xiandeng"
+    ],
+    "designer": "Newaser",
+    "image": "spr__yuejin"
+  },
+  {
+    "id": "spr__simalang",
+    "code": "☆SPR 019",
+    "name": "星司马朗",
+    "gender": "男性",
+    "title": "躬亲致治",
+    "kingdom": "魏",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "spr__junbing",
+      "spr__quji"
+    ],
+    "designer": "Newaser",
+    "image": "spr__simalang"
+  },
+  {
+    "id": "spr__chengpu",
+    "code": "☆SPR 020",
+    "name": "星程普",
+    "gender": "男性",
+    "title": "厉火燃战",
+    "kingdom": "吴",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "weizhong",
+      "spr__chunlao",
+      "spr__lihuo"
+    ],
+    "designer": "Newaser",
+    "image": "spr__chengpu",
+    "derivativeImages": [
+      "spr__chengpu#0"
+    ]
+  },
+  {
+    "id": "spr__zhenji",
+    "code": "☆SPR 021",
+    "name": "星甄姬",
+    "gender": "女性",
+    "title": "薄幸幽兰",
+    "kingdom": "魏",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "spr__hanying",
+      "spr__chenyuan",
+      "spr__luoshang"
+    ],
+    "designer": "Newaser",
+    "image": "spr__zhenji"
+  },
+  {
+    "id": "spr__jiaxu",
+    "code": "☆SPR 022",
+    "name": "星贾诩",
+    "gender": "男性",
+    "title": "神谟庙算",
+    "kingdom": "群",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "spr__shencun",
+      "spr__miaosuan",
+      "spr__shanhuo",
+      "spr__yaoji"
+    ],
+    "designer": "Newaser",
+    "image": "spr__jiaxu"
+  },
+  {
+    "id": "spr__yanjun",
+    "code": "☆SPR 023",
+    "name": "星严畯",
+    "gender": "男性",
+    "title": "志存补益",
+    "kingdom": "吴",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "spr__guanchao",
+      "spr__xunxian"
+    ],
+    "designer": "朱苦力&背影&Newaser",
+    "image": "spr__yanjun"
+  },
+  {
+    "id": "zm__simayi",
+    "code": "ZM.ZHI 001",
+    "name": "谋司马懿",
+    "gender": "男性",
+    "title": "重张区宇",
+    "kingdom": "魏",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "zm__fankui",
+      "zm__guicai",
+      "zm__fuye"
+    ],
+    "designer": "Newaser",
+    "image": "zm__simayi",
+    "derivativeImages": [
+      "zm__simayi#0"
+    ]
+  },
+  {
+    "id": "zm__madai",
+    "code": "ZM.SHI 001",
+    "name": "谋马岱",
+    "gender": "男性",
+    "title": "征西将军",
+    "kingdom": "蜀",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "mashu",
+      "zm__qianxi"
+    ],
+    "designer": "Newaser",
+    "image": "zm__madai"
+  },
+  {
+    "id": "zm__ganning",
+    "code": "ZM.SHI 002",
+    "name": "谋甘宁",
+    "gender": "男性",
+    "title": "兴王定霸",
+    "kingdom": "吴",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "zm__qixi",
+      "zm__fenwei"
+    ],
+    "designer": "Newaser",
+    "image": "zm__ganning"
+  },
+  {
+    "id": "zm__taishici",
+    "code": "ZM.TONG 001",
+    "name": "谋太史慈",
+    "gender": "男性",
+    "title": "神亭夺鍪",
+    "kingdom": "吴",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "zm__shenzhuo",
+      "zm__hanzhan",
+      "zm__tianyi"
+    ],
+    "designer": "Newaser",
+    "image": "zm__taishici",
+    "derivativeImages": [
+      "zm__taishici#0"
+    ]
+  },
+  {
+    "id": "zm__luxun",
+    "code": "ZM.YU 001",
+    "name": "谋陆逊",
+    "gender": "男性",
+    "title": "儒生雄才",
+    "kingdom": "吴",
+    "hp": 3,
+    "maxHp": 3,
+    "skills": [
+      "zm__qiantui",
+      "zm__lianying",
+      "zm__houqi"
+    ],
+    "designer": "Newaser",
+    "image": "zm__luxun"
+  },
+  {
+    "id": "zm__zhuran",
+    "code": "ZM.YU 002",
+    "name": "谋朱然",
+    "gender": "男性",
+    "title": "镇守江陵",
+    "kingdom": "吴",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "zm__danshou"
+    ],
+    "designer": "Newaser",
+    "image": "zm__zhuran"
+  },
+  {
+    "id": "zm__sunjian",
+    "code": "ZM.NENG 001",
+    "name": "谋孙坚",
+    "gender": "男性",
+    "title": "武烈开疆",
+    "kingdom": "吴",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "zm__polu",
+      "zm__xuanwei"
+    ],
+    "designer": "Newaser",
+    "image": "zm__sunjian",
+    "derivativeImages": [
+      "zm__sunjian#0"
+    ]
+  },
+  {
+    "id": "zm__jiangwei",
+    "code": "ZM.NENG 002",
+    "name": "谋姜维",
+    "gender": "男性",
+    "title": "见危授命",
+    "kingdom": "蜀",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "zm__tiaoxin",
+      "zm__zhiji"
+    ],
+    "designer": "Newaser",
+    "image": "zm__jiangwei",
+    "derivativeImages": [
+      "zm__jiangwei#0"
+    ]
+  },
+  {
+    "id": "zm__dengai",
+    "code": "ZM.NENG 003",
+    "name": "谋邓艾",
+    "gender": "男性",
+    "title": "克险图功",
+    "kingdom": "魏",
+    "hp": 4,
+    "maxHp": 4,
+    "skills": [
+      "zm__yanji",
+      "zm__zaopi",
+      "zm__kexian"
+    ],
+    "designer": "Newaser",
+    "image": "zm__dengai"
+  }
+]

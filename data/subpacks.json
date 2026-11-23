@@ -1,0 +1,88 @@
+[
+  {
+    "id": "spr__1",
+    "name": "其一",
+    "generals": [
+      "spr__machao",
+      "spr__zhugeliang",
+      "spr__guanyu",
+      "spr__xuyou",
+      "spr__shenpei",
+      "spr__caozhang",
+      "spr__guohuai",
+      "spr__zoushi"
+    ]
+  },
+  {
+    "id": "spr__2",
+    "name": "其二",
+    "generals": [
+      "spr__zhangliao",
+      "spr__luoxian",
+      "spr__chendao",
+      "spr__chengui",
+      "spr__chenwudongxi",
+      "spr__caochun",
+      "spr__wangtaowangyue",
+      "spr__sunchen"
+    ]
+  },
+  {
+    "id": "spr__3",
+    "name": "其三",
+    "generals": [
+      "spr__zhaoyun",
+      "spr__yuejin",
+      "spr__simalang",
+      "spr__chengpu",
+      "spr__zhenji",
+      "spr__jiaxu",
+      "spr__yanjun"
+    ],
+    "rules": [
+      "spr__chiyue"
+    ]
+  },
+  {
+    "id": "zm__zhi",
+    "name": "知",
+    "generals": [
+      "zm__simayi"
+    ]
+  },
+  {
+    "id": "zm__shi",
+    "name": "识",
+    "generals": [
+      "zm__madai",
+      "zm__ganning"
+    ]
+  },
+  {
+    "id": "zm__tong",
+    "name": "同",
+    "generals": [
+      "zm__taishici"
+    ],
+    "rules": [
+      "zm__luli"
+    ]
+  },
+  {
+    "id": "zm__yu",
+    "name": "虞",
+    "generals": [
+      "zm__luxun",
+      "zm__zhuran"
+    ]
+  },
+  {
+    "id": "zm__neng",
+    "name": "能",
+    "generals": [
+      "zm__sunjian",
+      "zm__jiangwei",
+      "zm__dengai"
+    ]
+  }
+]
