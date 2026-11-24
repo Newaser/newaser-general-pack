@@ -74,3 +74,13 @@ main .pagination-loader-container {
   border-color: #c9c2b5 !important;
   color: #272923 !important;
 }
+
+.gsc-header a[href*="/discussions/"],
+.gsc-comments-count > a[href*="/discussions/"],
+.gsc-reactions-count a[href*="/discussions/"],
+.gsc-comment-header a[href*="/discussions/"] {
+  pointer-events: none !important;
+  cursor: default !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}

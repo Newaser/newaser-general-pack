@@ -100,7 +100,7 @@ async function init() {
 
   const reviews = document.createElement("section");
   reviews.className = "general-reviews";
-  reviews.innerHTML = '<h2>评论</h2><div class="giscus"></div>';
+  reviews.innerHTML = '<h2>评论区</h2><div class="giscus"></div>';
   content.append(reviews);
 
   const giscus = document.createElement("script");
