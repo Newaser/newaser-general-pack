@@ -16,15 +16,14 @@
 │   └── images.json      # 图片资源元数据
 ├── image/
 │   ├── general/
-│   │   ├── card/        # 武将牌面图
-│   │   └── illustration/ # 纯武将插画
+│   └── general/        # 武将牌面图与纯武将插画
 │   ├── card/            # 游戏牌图片文件
 │   └── rule/            # 机制说明图片文件
 ├── data-schema.md       # 本数据结构说明
 └── general-roster.md    # 武将清单
 ```
 
-每个 JSON 文件保存对应类型实体的数组，实体间按本文件定义的 ID 字段关联。武将牌面图片保存在 `image/general/card/`，纯武将插画保存在 `image/general/illustration/`。`images.json` 记录图片的 ID、相对路径及作者信息；JSON 中的图片路径使用相对于项目根目录的正斜杠路径，例如 `image/general/card/spr__machao.png`。
+每个 JSON 文件保存对应类型实体的数组，实体间按本文件定义的 ID 字段关联。武将牌面图片与纯武将插画均保存在 `image/general/`，并在 `images.json` 中登记各自的相对路径。`images.json` 记录图片的 ID、相对路径及作者信息；JSON 中的图片路径使用相对于项目根目录的正斜杠路径，例如 `image/general/spr__machao.png`。
 
 ## 通用约定
 
@@ -68,8 +67,7 @@
 | `shield` | number | 否 | 武将设计上的护甲值。 |
 | `skills` | string[] | 否 | 武将拥有的技能 ID 列表。 |
 | `designer` | string 或 string[] | 否 | 武将设计者；多人时可使用字符串数组。 |
-| `image` | string | 否 | 武将主图对应的图片 ID。 |
-| `derivativeImages` | string[] | 否 | 与武将相关的衍生图片 ID 列表。 |
+| `images` | object | 否 | 武将图片；包含可选的 `main` 主图 ID、`derivatives` 衍生图片 ID 列表和 `illustration` 插画图片 ID。 |
 
 ## 技能 `skill`
 
@@ -110,7 +108,7 @@
 | 字段 | 类型 | 必填 | 含义 |
 |---|---|---:|---|
 | `id` | string | 是 | 图片资源的唯一、稳定标识，供其他实体引用。 |
-| `path` | string | 是 | 图片相对于网站静态资源根目录的路径，例如 `image/general/card/spr__machao.png` 或 `image/general/illustration/spr__machao.png`。 |
+| `path` | string | 是 | 图片相对于网站静态资源根目录的路径，例如 `image/general/spr__machao.png` 或 `image/general/spr__machao.jpg`。 |
 | `author` | string | 否 | 图片作品的作者或版权署名。 |
 | `illustrator` | string | 否 | 图片的绘制者或插画师。若与 `author` 是同一概念，可只填写一个字段或统一约定两者用法。 |
 
@@ -150,8 +148,9 @@ subpack.generals          -> general.id
 subpack.cards             -> card.id
 subpack.rules             -> rule.id
 general.skills            -> skill.id
-general.image             -> image.id
-general.derivativeImages  -> image.id
+general.images.main       -> image.id
+general.images.derivatives -> image.id
+general.images.illustration -> image.id
 skill.images.main         -> image.id
 skill.images.derivatives  -> image.id
 skill.derivatives.skills  -> skill.id (目标记录可不存在)

@@ -40,8 +40,8 @@ function packOf(general) {
 function subpackOf(general) { return subpacks.find((subpack) => subpack.generals?.includes(general.id)); }
 function esc(value) { return String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]); }
 function illustrationPath(general) {
-  const fileId = ({ spr__chenwudongxi: "spr__chendong", spr__wangtaowangyue: "spr__wangwang" })[general.id] || general.id;
-  return `image/general/illustration/${fileId}.jpg`;
+  const illustration = general.images?.illustration;
+  return images.find((image) => image.id === illustration)?.path || "";
 }
 function fillSubpackSelect() {
   const activePack = packs.find((pack) => pack.id === state.pack);

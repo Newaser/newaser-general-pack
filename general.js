@@ -19,14 +19,17 @@ async function init() {
 
   const subpack = subpacks.find((item) => item.generals?.includes(id));
   const pack = packs.find((item) => item.subpacks.includes(subpack?.id));
-  const image = images.find((item) => item.id === general.image);
+  const mainImageId = general.images?.main;
+  const mainImage = images.find((item) => item.id === mainImageId);
+  const illustration = images.find((item) => item.id === general.images?.illustration);
+  const image = illustration || mainImage;
   const generalSkills = (general.skills || []).map((skillId) => skills.find((skill) => skill.id === skillId) || { id: skillId, name: skillId, description: "技能说明尚未整理。" });
-  const portrait = image ? `<img class="detail-portrait" src="${esc(image.path)}" alt="${esc(general.name)}武将卡面">` : '<div class="detail-portrait-placeholder">暂无卡面</div>';
+  const portrait = image ? `<img class="detail-portrait" src="${esc(image.path)}" alt="${esc(general.name)}${image.id === general.images?.illustration ? "插画" : "武将卡面"}">` : '<div class="detail-portrait-placeholder">暂无卡面</div>';
   const designer = general.designer ? `设计：${Array.isArray(general.designer) ? general.designer.map(esc).join("、") : esc(general.designer)}` : "";
-  const credits = [
-    image?.author ? `制图：${esc(image.author)}` : "",
-    image?.illustrator ? `插画：${esc(image.illustrator)}` : ""
-  ].filter(Boolean).join("　·　");
+  const imageCredits = (selected) => selected?.id === general.images?.illustration
+    ? (selected.illustrator ? `画师：${esc(selected.illustrator)}` : "")
+    : [selected?.author ? `制图：${esc(selected.author)}` : "", selected?.illustrator ? `插画：${esc(selected.illustrator)}` : ""].filter(Boolean).join("　·　");
+  const credits = imageCredits(image);
   const packContext = pack && subpack ? `${pack.name} · ${subpack.name}` : pack?.name || "";
   const packCatalogUrl = `catalog.html${pack ? `?pack=${encodeURIComponent(pack.id)}${subpack ? `&subpack=${encodeURIComponent(subpack.id)}` : ""}` : ""}`;
 
@@ -66,29 +69,30 @@ async function init() {
   document.title = `${general.name} · 将册`;
   content.innerHTML = `<div class="detail-layout"><div class="detail-art"><div class="physical-card">${portrait}</div>${credits ? `<p class="image-credit">${credits}</p>` : ""}</div><div class="detail-copy"><p class="detail-code">${esc(general.code || pack?.name || "")}</p><div class="detail-name-row"><div class="detail-name-main"><h1>${esc(general.name)}</h1>${general.title ? `<p class="detail-title">「${esc(general.title)}」</p>` : ""}</div>${packContext ? `<div class="detail-context"><a class="detail-pack" href="${esc(packCatalogUrl)}" aria-label="在武将图鉴中查看${esc(packContext)}">${esc(packContext)}</a>${designer ? `<p class="detail-designer">${designer}</p>` : ""}</div>` : designer ? `<p class="detail-designer">${designer}</p>` : ""}</div><div class="detail-stats"><div><small>势力</small><b>${esc(general.kingdom)}${general.subkingdom ? ` / ${esc(general.subkingdom)}` : ""}</b></div><div><small>性别</small><b>${esc(general.gender)}</b></div><div><small>体力</small><b>${esc(general.hp)} / ${esc(general.maxHp)}${general.shield ? `　护甲 ${esc(general.shield)}` : ""}</b></div></div><section class="detail-skills"><h2>技能</h2>${generalSkills.length ? generalSkills.map((skill) => `<article class="skill-entry"><h3>${esc(skill.name)}${(skill.tags || []).length ? `<small>${skill.tags.map(esc).join(" · ")}</small>` : ""}</h3><p>${skill.description || "技能说明尚未整理。"}</p>${renderDerivatives(skill)}</article>`).join("") : '<p>技能资料尚未整理。</p>'}</section></div></div>`;
 
-  const galleryImages = [image, ...(general.derivativeImages || []).map((imageId) => images.find((item) => item.id === imageId))].filter(Boolean);
+  const galleryImages = [illustration, mainImage, ...(general.images?.derivatives || []).map((imageId) => images.find((item) => item.id === imageId))].filter(Boolean);
   if (galleryImages.length > 1) {
     const gallery = document.createElement("div");
     gallery.className = "derivative-image-gallery";
     gallery.setAttribute("aria-label", "武将图片");
-    gallery.innerHTML = galleryImages.map((item, index) => `<button type="button" class="gallery-thumb${index === 0 ? " active" : ""}" data-gallery-image="${esc(item.id)}" aria-pressed="${index === 0}" aria-label="查看${esc(general.name)}${index === 0 ? "武将牌" : `衍生牌${index}`}" title="${index === 0 ? "武将牌" : `衍生牌${index}`}"><img src="${esc(item.path.replace(/#/g, "%23"))}" alt=""><span>${index === 0 ? "武将牌" : `衍生牌${index}`}</span></button>`).join("");
+    gallery.innerHTML = galleryImages.map((item, index) => {
+      const label = item.id === general.images?.illustration ? "插画" : item.id === mainImageId ? "武将牌" : `衍生牌${index - (illustration ? 1 : 0)}`;
+      return `<button type="button" class="gallery-thumb${index === 0 ? " active" : ""}" data-gallery-image="${esc(item.id)}" aria-pressed="${index === 0}" aria-label="查看${esc(general.name)}${label}" title="${label}"><img src="${esc(item.path.replace(/#/g, "%23"))}" alt=""><span>${label}</span></button>`;
+    }).join("");
     content.querySelector(".physical-card").after(gallery);
     const portraitElement = content.querySelector(".detail-portrait");
     const creditsElement = content.querySelector(".image-credit");
     gallery.querySelectorAll("[data-gallery-image]").forEach((button) => button.addEventListener("click", () => {
       const selected = galleryImages.find((item) => item.id === button.dataset.galleryImage);
       portraitElement.src = selected.path.replace(/#/g, "%23");
-      portraitElement.alt = `${general.name}${selected.id === general.image ? "武将牌" : "衍生图"}`;
+      const selectedLabel = selected.id === general.images?.illustration ? "插画" : selected.id === mainImageId ? "武将牌" : "衍生图";
+      portraitElement.alt = `${general.name}${selectedLabel}`;
       gallery.querySelectorAll("[data-gallery-image]").forEach((thumb) => {
         const active = thumb === button;
         thumb.classList.toggle("active", active);
         thumb.setAttribute("aria-pressed", String(active));
       });
       if (creditsElement) {
-        creditsElement.innerHTML = [
-          selected.author ? `制图：${esc(selected.author)}` : "",
-          selected.illustrator ? `插画：${esc(selected.illustrator)}` : ""
-        ].filter(Boolean).join("　·　");
+        creditsElement.innerHTML = imageCredits(selected);
       }
     }));
   }

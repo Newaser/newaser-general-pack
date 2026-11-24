@@ -131,8 +131,8 @@ body{font-size:18px;line-height:1.75}
 /* Subtle, reusable artwork already included in the project */
 .collection-card{isolation:isolate}
 .collection-card:before{content:"";position:absolute;z-index:-1;right:0;top:0;bottom:0;width:48%;background-size:cover;background-position:center 18%;opacity:.12;mix-blend-mode:screen;mask-image:linear-gradient(90deg,transparent 0%,#000 35%,#000 100%);pointer-events:none}
-.card-spr:before{background-image:var(--collection-art,url("image/general/illustration/spr__machao.jpg"))}
-.card-zm:before{background-image:var(--collection-art,url("image/general/illustration/zm__taishici.jpg"))}
+.card-spr:before{background-image:var(--collection-art,url("image/general/spr__machao.jpg"))}
+.card-zm:before{background-image:var(--collection-art,url("image/general/zm__taishici.jpg"))}
 .collection-content,.subpack-chips,.collection-footer,.card-watermark{position:relative;z-index:1}
 .collection-footer{position:absolute}
 .card-watermark{position:absolute}

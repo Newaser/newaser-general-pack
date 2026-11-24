@@ -13,10 +13,13 @@
       "spr__shichou"
     ],
     "designer": "Newaser",
-    "image": "spr__machao",
-    "derivativeImages": [
-      "spr__machao#0"
-    ]
+    "images": {
+      "main": "spr__machao",
+      "illustration": "spr__machao#i",
+      "derivatives": [
+        "spr__machao#0"
+      ]
+    }
   },
   {
     "id": "spr__zhugeliang",
@@ -32,7 +35,10 @@
       "spr__zhijue"
     ],
     "designer": "Newaser",
-    "image": "spr__zhugeliang"
+    "images": {
+      "main": "spr__zhugeliang",
+      "illustration": "spr__zhugeliang#i"
+    }
   },
   {
     "id": "spr__guanyu",
@@ -49,7 +55,10 @@
       "spr__nianen"
     ],
     "designer": "Newaser",
-    "image": "spr__guanyu"
+    "images": {
+      "main": "spr__guanyu",
+      "illustration": "spr__guanyu#i"
+    }
   },
   {
     "id": "spr__xuyou",
@@ -66,7 +75,10 @@
       "spr__siyan"
     ],
     "designer": "Newaser",
-    "image": "spr__xuyou"
+    "images": {
+      "main": "spr__xuyou",
+      "illustration": "spr__xuyou#i"
+    }
   },
   {
     "id": "spr__shenpei",
@@ -82,7 +94,10 @@
       "spr__shouye"
     ],
     "designer": "Newaser",
-    "image": "spr__shenpei"
+    "images": {
+      "main": "spr__shenpei",
+      "illustration": "spr__shenpei#i"
+    }
   },
   {
     "id": "spr__caozhang",
@@ -97,7 +112,10 @@
       "spr__jiangchi"
     ],
     "designer": "Newaser",
-    "image": "spr__caozhang"
+    "images": {
+      "main": "spr__caozhang",
+      "illustration": "spr__caozhang#i"
+    }
   },
   {
     "id": "spr__guohuai",
@@ -112,7 +130,10 @@
       "spr__jingce"
     ],
     "designer": "Newaser",
-    "image": "spr__guohuai"
+    "images": {
+      "main": "spr__guohuai",
+      "illustration": "spr__guohuai#i"
+    }
   },
   {
     "id": "spr__zoushi",
@@ -128,7 +149,10 @@
       "spr__zhenxia"
     ],
     "designer": "Newaser",
-    "image": "spr__zoushi"
+    "images": {
+      "main": "spr__zoushi",
+      "illustration": "spr__zoushi#i"
+    }
   },
   {
     "id": "spr__zhangliao",
@@ -144,7 +168,10 @@
       "spr__tafeng"
     ],
     "designer": "Newaser",
-    "image": "spr__zhangliao"
+    "images": {
+      "main": "spr__zhangliao",
+      "illustration": "spr__zhangliao#i"
+    }
   },
   {
     "id": "spr__luoxian",
@@ -162,7 +189,10 @@
       "spr__xuzhong"
     ],
     "designer": "Newaser",
-    "image": "spr__luoxian"
+    "images": {
+      "main": "spr__luoxian",
+      "illustration": "spr__luoxian#i"
+    }
   },
   {
     "id": "spr__chendao",
@@ -178,7 +208,10 @@
       "spr__baier"
     ],
     "designer": "Newaser",
-    "image": "spr__chendao"
+    "images": {
+      "main": "spr__chendao",
+      "illustration": "spr__chendao#i"
+    }
   },
   {
     "id": "spr__chengui",
@@ -194,7 +227,10 @@
       "spr__congshi"
     ],
     "designer": "Newaser",
-    "image": "spr__chengui"
+    "images": {
+      "main": "spr__chengui",
+      "illustration": "spr__chengui#i"
+    }
   },
   {
     "id": "spr__chenwudongxi",
@@ -211,7 +247,10 @@
       "spr__fenming"
     ],
     "designer": "Newaser",
-    "image": "spr__chenwudongxi"
+    "images": {
+      "main": "spr__chenwudongxi",
+      "illustration": "spr__chenwudongxi#i"
+    }
   },
   {
     "id": "spr__caochun",
@@ -226,7 +265,10 @@
       "spr__shanjia"
     ],
     "designer": "Newaser",
-    "image": "spr__caochun"
+    "images": {
+      "main": "spr__caochun",
+      "illustration": "spr__caochun#i"
+    }
   },
   {
     "id": "spr__wangtaowangyue",
@@ -242,7 +284,10 @@
       "spr__tongzheng"
     ],
     "designer": "Newaser",
-    "image": "spr__wangtaowangyue"
+    "images": {
+      "main": "spr__wangtaowangyue",
+      "illustration": "spr__wangtaowangyue#i"
+    }
   },
   {
     "id": "spr__sunchen",
@@ -258,7 +303,10 @@
       "spr__shanfei"
     ],
     "designer": "Newaser",
-    "image": "spr__sunchen"
+    "images": {
+      "main": "spr__sunchen",
+      "illustration": "spr__sunchen#i"
+    }
   },
   {
     "id": "spr__zhaoyun",
@@ -275,7 +323,10 @@
       "spr__chongzhen"
     ],
     "designer": "Newaser",
-    "image": "spr__zhaoyun"
+    "images": {
+      "main": "spr__zhaoyun",
+      "illustration": "spr__zhaoyun#i"
+    }
   },
   {
     "id": "spr__yuejin",
@@ -291,7 +342,10 @@
       "spr__xiandeng"
     ],
     "designer": "Newaser",
-    "image": "spr__yuejin"
+    "images": {
+      "main": "spr__yuejin",
+      "illustration": "spr__yuejin#i"
+    }
   },
   {
     "id": "spr__simalang",
@@ -307,7 +361,10 @@
       "spr__quji"
     ],
     "designer": "Newaser",
-    "image": "spr__simalang"
+    "images": {
+      "main": "spr__simalang",
+      "illustration": "spr__simalang#i"
+    }
   },
   {
     "id": "spr__chengpu",
@@ -324,10 +381,13 @@
       "spr__lihuo"
     ],
     "designer": "Newaser",
-    "image": "spr__chengpu",
-    "derivativeImages": [
-      "spr__chengpu#0"
-    ]
+    "images": {
+      "main": "spr__chengpu",
+      "illustration": "spr__chengpu#i",
+      "derivatives": [
+        "spr__chengpu#0"
+      ]
+    }
   },
   {
     "id": "spr__zhenji",
@@ -344,7 +404,10 @@
       "spr__luoshang"
     ],
     "designer": "Newaser",
-    "image": "spr__zhenji"
+    "images": {
+      "main": "spr__zhenji",
+      "illustration": "spr__zhenji#i"
+    }
   },
   {
     "id": "spr__jiaxu",
@@ -362,7 +425,10 @@
       "spr__yaoji"
     ],
     "designer": "Newaser",
-    "image": "spr__jiaxu"
+    "images": {
+      "main": "spr__jiaxu",
+      "illustration": "spr__jiaxu#i"
+    }
   },
   {
     "id": "spr__yanjun",
@@ -377,8 +443,15 @@
       "spr__guanchao",
       "spr__xunxian"
     ],
-    "designer": "朱苦力&背影&Newaser",
-    "image": "spr__yanjun"
+    "designer": [
+      "朱苦力",
+      "背影",
+      "Newaser"
+    ],
+    "images": {
+      "main": "spr__yanjun",
+      "illustration": "spr__yanjun#i"
+    }
   },
   {
     "id": "zm__simayi",
@@ -395,10 +468,13 @@
       "zm__fuye"
     ],
     "designer": "Newaser",
-    "image": "zm__simayi",
-    "derivativeImages": [
-      "zm__simayi#0"
-    ]
+    "images": {
+      "main": "zm__simayi",
+      "illustration": "zm__simayi#i",
+      "derivatives": [
+        "zm__simayi#0"
+      ]
+    }
   },
   {
     "id": "zm__madai",
@@ -414,7 +490,10 @@
       "zm__qianxi"
     ],
     "designer": "Newaser",
-    "image": "zm__madai"
+    "images": {
+      "main": "zm__madai",
+      "illustration": "zm__madai#i"
+    }
   },
   {
     "id": "zm__ganning",
@@ -430,7 +509,10 @@
       "zm__fenwei"
     ],
     "designer": "Newaser",
-    "image": "zm__ganning"
+    "images": {
+      "main": "zm__ganning",
+      "illustration": "zm__ganning#i"
+    }
   },
   {
     "id": "zm__taishici",
@@ -447,10 +529,13 @@
       "zm__tianyi"
     ],
     "designer": "Newaser",
-    "image": "zm__taishici",
-    "derivativeImages": [
-      "zm__taishici#0"
-    ]
+    "images": {
+      "main": "zm__taishici",
+      "illustration": "zm__taishici#i",
+      "derivatives": [
+        "zm__taishici#0"
+      ]
+    }
   },
   {
     "id": "zm__luxun",
@@ -467,7 +552,10 @@
       "zm__houqi"
     ],
     "designer": "Newaser",
-    "image": "zm__luxun"
+    "images": {
+      "main": "zm__luxun",
+      "illustration": "zm__luxun#i"
+    }
   },
   {
     "id": "zm__zhuran",
@@ -482,7 +570,10 @@
       "zm__danshou"
     ],
     "designer": "Newaser",
-    "image": "zm__zhuran"
+    "images": {
+      "main": "zm__zhuran",
+      "illustration": "zm__zhuran#i"
+    }
   },
   {
     "id": "zm__sunjian",
@@ -498,10 +589,13 @@
       "zm__xuanwei"
     ],
     "designer": "Newaser",
-    "image": "zm__sunjian",
-    "derivativeImages": [
-      "zm__sunjian#0"
-    ]
+    "images": {
+      "main": "zm__sunjian",
+      "illustration": "zm__sunjian#i",
+      "derivatives": [
+        "zm__sunjian#0"
+      ]
+    }
   },
   {
     "id": "zm__jiangwei",
@@ -517,10 +611,13 @@
       "zm__zhiji"
     ],
     "designer": "Newaser",
-    "image": "zm__jiangwei",
-    "derivativeImages": [
-      "zm__jiangwei#0"
-    ]
+    "images": {
+      "main": "zm__jiangwei",
+      "illustration": "zm__jiangwei#i",
+      "derivatives": [
+        "zm__jiangwei#0"
+      ]
+    }
   },
   {
     "id": "zm__dengai",
@@ -537,6 +634,9 @@
       "zm__kexian"
     ],
     "designer": "Newaser",
-    "image": "zm__dengai"
+    "images": {
+      "main": "zm__dengai",
+      "illustration": "zm__dengai#i"
+    }
   }
 ]

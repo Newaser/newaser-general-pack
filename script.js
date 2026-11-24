@@ -2,14 +2,14 @@ let homepagePackArtworkData = null;
 
 function randomizeHomepagePackArtwork() {
   if (!homepagePackArtworkData) return;
-  const { packs, subpacks, generals } = homepagePackArtworkData;
+  const { packs, subpacks, generals, images } = homepagePackArtworkData;
   packs.forEach((pack) => {
     const card = document.querySelector(pack.id === "spr" ? ".collection-card.card-spr" : ".collection-card.card-zm");
     const packGenerals = generals.filter((general) => pack.subpacks.some((subpackId) => subpacks.find((subpack) => subpack.id === subpackId)?.generals?.includes(general.id)));
     const featured = packGenerals[Math.floor(Math.random() * packGenerals.length)];
     if (!card || !featured) return;
-    const fileId = ({ spr__chenwudongxi: "spr__chendong", spr__wangtaowangyue: "spr__wangwang" })[featured.id] || featured.id;
-    card.style.setProperty("--collection-art", `url("image/general/illustration/${fileId}.jpg")`);
+    const illustration = images.find((image) => image.id === featured.images?.illustration);
+    if (illustration) card.style.setProperty("--collection-art", `url("${illustration.path}")`);
   });
 }
 
@@ -20,7 +20,7 @@ async function loadPackCounts() {
       if (!response.ok) throw new Error(name);
       return response.json();
     }));
-    homepagePackArtworkData = { packs, subpacks, generals };
+    homepagePackArtworkData = { packs, subpacks, generals, images };
     packs.forEach((pack) => {
       const count = generals.filter((general) => pack.subpacks.some((subpackId) => subpacks.find((subpack) => subpack.id === subpackId)?.generals?.includes(general.id))).length;
       const countNode = document.querySelector(`[data-pack-count="${pack.id}"]`);
@@ -46,7 +46,7 @@ function setupGeneralCarousel(packs, subpacks, generals, images) {
   const showGeneral = (index, direction = 0, effect = "slide") => {
     currentIndex = (index + generals.length) % generals.length;
     const general = generals[currentIndex];
-    const artwork = images.find((item) => item.id === general.image);
+    const artwork = images.find((item) => item.id === general.images?.main);
     if (!artwork) return;
     sessionStorage.setItem("hero-featured-general-id", general.id);
     const subpack = subpacks.find((item) => item.generals?.includes(general.id));
