@@ -17,6 +17,15 @@ const copyToClipboard = async (value) => {
 };
 
 document.querySelectorAll("[data-copy-qq]").forEach((button) => {
+  let suppressHoverUntilPointerMoves = false;
+
+  button.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "touch") suppressHoverUntilPointerMoves = true;
+  });
+  button.addEventListener("pointermove", (event) => {
+    if (event.pointerType === "mouse") suppressHoverUntilPointerMoves = false;
+  });
+
   button.addEventListener("click", async () => {
     const status = button.querySelector(".copy-status");
     try {
@@ -31,11 +40,16 @@ document.querySelectorAll("[data-copy-qq]").forEach((button) => {
       button.setAttribute("aria-label", `QQ群号 ${button.dataset.copyQq} 复制失败，请手动复制`);
       button.classList.remove("copied");
     }
-    window.setTimeout(() => {
+    if (button.copyTooltipTimer) window.clearTimeout(button.copyTooltipTimer);
+    button.classList.add("copy-feedback");
+    button.classList.toggle("suppress-copy-hover", suppressHoverUntilPointerMoves);
+    button.copyTooltipTimer = window.setTimeout(() => {
       status.textContent = "";
       button.dataset.tooltip = "点击复制";
       button.setAttribute("aria-label", `复制QQ群号 ${button.dataset.copyQq}`);
       button.classList.remove("copied");
+      button.classList.remove("copy-feedback");
+      button.copyTooltipTimer = null;
     }, 2200);
   });
 });

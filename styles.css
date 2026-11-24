@@ -348,7 +348,11 @@ body{font-size:18px;line-height:1.75}
 .copy-qq.copied .copy-glyph{display:none}
 .copy-qq.copied .check-glyph{display:block;stroke:#87e0cf}
 .copy-qq:after{content:attr(data-tooltip);position:absolute;z-index:5;left:50%;bottom:calc(100% + 8px);transform:translate(-50%,4px);padding:5px 8px;border:1px solid #ffffff35;border-radius:3px;background:#152b35;color:#f4f5ef;font:500 11px/1.3 var(--serif);white-space:nowrap;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s,transform .16s,visibility .16s}
-.copy-qq:hover:after,.copy-qq:focus-visible:after{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.copy-qq:focus-visible:after{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.copy-qq.copy-feedback:after{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media(hover:hover) and (pointer:fine){.copy-qq:hover:after{opacity:1;visibility:visible;transform:translate(-50%,0)}}
+@media(hover:none),(pointer:coarse){.copy-qq:hover:after{opacity:0;visibility:hidden;transform:translate(-50%,4px)}}
+.copy-qq.suppress-copy-hover:hover:after{opacity:0;visibility:hidden;transform:translate(-50%,4px)}
 .copy-qq:focus-visible{outline:2px solid #9bdde0;outline-offset:4px}
 .copy-status{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .expansion-info-card .copy-qq{padding:0;border:0;background:none;color:inherit;text-align:left}
