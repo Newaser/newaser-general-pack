@@ -276,3 +276,26 @@ body{font-size:18px;line-height:1.75}
 .hero:before{content:"";position:absolute;z-index:0;inset:0 auto 0 0;width:58%;pointer-events:none;opacity:.5;background:radial-gradient(circle at 18% 28%,transparent 0 82px,#b89a6822 83px 84px,transparent 85px 119px,#b89a6817 120px 121px,transparent 122px),repeating-linear-gradient(132deg,transparent 0 34px,#b89a6810 35px 36px,transparent 37px 70px);mask-image:linear-gradient(90deg,#000 0%,#0009 54%,transparent 100%)}
 .hero-copy,.hero-art{position:relative;z-index:1}
 @media(max-width:760px){.hero:before{width:100%;opacity:.28;background:radial-gradient(circle at 82% 34%,transparent 0 76px,#b89a6822 77px 78px,transparent 79px 110px,#b89a6817 111px 112px,transparent 113px),repeating-linear-gradient(132deg,transparent 0 42px,#b89a680d 43px 44px,transparent 45px 86px)}}
+/* Make the hero linework visible at normal screen contrast */
+.hero:before{width:62%;opacity:.9;background:radial-gradient(circle at 13% 24%,transparent 0 76px,#b89a6838 77px 78px,transparent 79px 112px,#b89a6828 113px 114px,transparent 115px 151px),repeating-linear-gradient(135deg,transparent 0 43px,#b89a6822 44px 45px,transparent 46px 88px);mask-image:linear-gradient(90deg,#000 0%,#000 43%,transparent 100%)}
+@media(max-width:760px){.hero:before{width:100%;opacity:.48;background:radial-gradient(circle at 91% 27%,transparent 0 74px,#b89a6830 75px 76px,transparent 77px 108px,#b89a6820 109px 110px,transparent 111px 144px),repeating-linear-gradient(135deg,transparent 0 50px,#b89a6818 51px 52px,transparent 53px 104px)}}
+/* Bring the collection overview title closer and give it more presence */
+.collection-section{padding-top:62px}
+.section-heading h2{font-size:46px}
+@media(max-width:760px){.collection-section{padding-top:46px}.section-heading h2{font-size:35px}}
+/* Detail page context sits with the general identity, without a breadcrumb row */
+.detail-code{margin:0 0 8px}
+.detail-title{margin-bottom:10px}
+.detail-pack{display:inline-block;margin:0 0 16px;padding:4px 10px;background:#ebe6db;color:#77756d;font:500 13px/1.6 var(--serif);letter-spacing:.06em}
+.detail-designer{margin:12px 0 0;color:#77756d;font:400 14px/1.7 var(--serif)}
+/* Align package context beside the general name, with designer credit beneath it */
+.detail-name-row{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.detail-name-main{min-width:0}
+.detail-name-row .detail-title{margin-bottom:0}
+.detail-context{flex:0 0 auto;margin-left:auto;padding-top:6px;text-align:right}
+.detail-context .detail-pack{margin:0;padding:4px 10px;background:#ebe6db;color:#77756d;font:500 13px/1.6 var(--serif);letter-spacing:.06em;white-space:nowrap}
+.detail-context .detail-designer{margin:5px 0 0;color:#77756d;font:400 13px/1.6 var(--serif);white-space:nowrap}
+@media(max-width:760px){.detail-name-row{gap:8px 14px}.detail-context{padding-top:4px}.detail-context .detail-pack,.detail-context .detail-designer{font-size:12px}}
+.detail-context a.detail-pack{display:inline-block;text-decoration:none;transition:background .18s,color .18s,transform .18s}
+.detail-context a.detail-pack:hover{background:#ded6c8;color:#7f3b31;transform:translateY(-1px)}
+.detail-context a.detail-pack:focus-visible{outline:2px solid var(--red);outline-offset:3px}

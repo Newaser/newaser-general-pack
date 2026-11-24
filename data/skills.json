@@ -205,7 +205,12 @@
   {
     "id": "spr__guimou",
     "name": "诡谋",
-    "description": "每回合限一次，当一名角色受到你造成的伤害时，你可以选择一项：转移此伤害；摸两张牌。<i>背水：本回合你不能对其他角色使用牌。</i>然后该角色执行未被选择的项。"
+    "description": "每回合限一次，当一名角色受到你造成的伤害时，你可以选择一项：转移此伤害；摸两张牌。<i>背水：本回合你不能对其他角色使用牌。</i>然后该角色执行未被选择的项。",
+    "derivatives": {
+      "rules": [
+        "beishui"
+      ]
+    }
   },
   {
     "id": "spr__congshi",
@@ -279,7 +284,12 @@
   {
     "id": "spr__chongzhen",
     "name": "冲阵",
-    "description": "当你发动〖龙胆〗时，你可以获得对方一张牌。<i>驰越：弃置此牌，对其造成1点伤害。</i>"
+    "description": "当你发动〖龙胆〗时，你可以获得对方一张牌。<i>驰越：弃置此牌，对其造成1点伤害。</i>",
+    "derivatives": {
+      "rules": [
+        "spr__chiyue"
+      ]
+    }
   },
   {
     "id": "spr__xiaoguo",
@@ -512,9 +522,6 @@
     ],
     "description": "限定技，准备阶段，你可以选择一名其他角色，与其进行“协力”。其结束阶段，若你与其“协力”成功，则你与其进入“戮力”状态。",
     "derivatives": {
-      "skills": [
-        "zm__luli"
-      ],
       "rules": [
         "xieli",
         "zm__luli"
@@ -604,6 +611,9 @@
       "skills": [
         "zm__huoji",
         "xinghun"
+      ],
+      "rules": [
+        "beishui"
       ]
     }
   },

@@ -22,11 +22,13 @@ async function init() {
   const image = images.find((item) => item.id === general.image);
   const generalSkills = (general.skills || []).map((skillId) => skills.find((skill) => skill.id === skillId) || { id: skillId, name: skillId, description: "技能说明尚未整理。" });
   const portrait = image ? `<img class="detail-portrait" src="${esc(image.path)}" alt="${esc(general.name)}武将卡面">` : '<div class="detail-portrait-placeholder">暂无卡面</div>';
+  const designer = general.designer ? `设计：${Array.isArray(general.designer) ? general.designer.map(esc).join("、") : esc(general.designer)}` : "";
   const credits = [
-    general.designer ? `设计：${Array.isArray(general.designer) ? general.designer.map(esc).join("、") : esc(general.designer)}` : "",
     image?.author ? `制图：${esc(image.author)}` : "",
     image?.illustrator ? `插画：${esc(image.illustrator)}` : ""
   ].filter(Boolean).join("　·　");
+  const packContext = pack && subpack ? `${pack.name} · ${subpack.name}` : pack?.name || "";
+  const packCatalogUrl = `catalog.html${pack ? `?pack=${encodeURIComponent(pack.id)}${subpack ? `&subpack=${encodeURIComponent(subpack.id)}` : ""}` : ""}`;
 
   const entitySets = { skills, cards, rules };
   const derivativeLabels = { skills: "衍生技能", cards: "衍生游戏牌", rules: "衍生机制" };
@@ -62,7 +64,7 @@ async function init() {
   };
 
   document.title = `${general.name} · 将册`;
-  content.innerHTML = `<div class="detail-back"><a href="catalog.html${pack ? `?pack=${encodeURIComponent(pack.id)}` : ""}">← 返回武将图鉴</a><span>${esc(pack?.name || "武将")}　/　${esc(subpack?.name || "")}</span></div><div class="detail-layout"><div class="detail-art"><div class="physical-card">${portrait}</div>${credits ? `<p class="image-credit">${credits}</p>` : ""}</div><div class="detail-copy"><div class="eyebrow"><span class="eyebrow-line"></span> 武将资料</div><p class="detail-code">${esc(general.code || pack?.name || "")}</p><h1>${esc(general.name)}</h1>${general.title ? `<p class="detail-title">「${esc(general.title)}」</p>` : ""}<div class="detail-stats"><div><small>势力</small><b>${esc(general.kingdom)}${general.subkingdom ? ` / ${esc(general.subkingdom)}` : ""}</b></div><div><small>性别</small><b>${esc(general.gender)}</b></div><div><small>体力</small><b>${esc(general.hp)} / ${esc(general.maxHp)}${general.shield ? `　护甲 ${esc(general.shield)}` : ""}</b></div></div><section class="detail-skills"><h2>技能</h2>${generalSkills.length ? generalSkills.map((skill) => `<article class="skill-entry"><h3>${esc(skill.name)}${(skill.tags || []).length ? `<small>${skill.tags.map(esc).join(" · ")}</small>` : ""}</h3><p>${skill.description || "技能说明尚未整理。"}</p>${renderDerivatives(skill)}</article>`).join("") : '<p>技能资料尚未整理。</p>'}</section></div></div>`;
+  content.innerHTML = `<div class="detail-layout"><div class="detail-art"><div class="physical-card">${portrait}</div>${credits ? `<p class="image-credit">${credits}</p>` : ""}</div><div class="detail-copy"><p class="detail-code">${esc(general.code || pack?.name || "")}</p><div class="detail-name-row"><div class="detail-name-main"><h1>${esc(general.name)}</h1>${general.title ? `<p class="detail-title">「${esc(general.title)}」</p>` : ""}</div>${packContext ? `<div class="detail-context"><a class="detail-pack" href="${esc(packCatalogUrl)}" aria-label="在武将图鉴中查看${esc(packContext)}">${esc(packContext)}</a>${designer ? `<p class="detail-designer">${designer}</p>` : ""}</div>` : designer ? `<p class="detail-designer">${designer}</p>` : ""}</div><div class="detail-stats"><div><small>势力</small><b>${esc(general.kingdom)}${general.subkingdom ? ` / ${esc(general.subkingdom)}` : ""}</b></div><div><small>性别</small><b>${esc(general.gender)}</b></div><div><small>体力</small><b>${esc(general.hp)} / ${esc(general.maxHp)}${general.shield ? `　护甲 ${esc(general.shield)}` : ""}</b></div></div><section class="detail-skills"><h2>技能</h2>${generalSkills.length ? generalSkills.map((skill) => `<article class="skill-entry"><h3>${esc(skill.name)}${(skill.tags || []).length ? `<small>${skill.tags.map(esc).join(" · ")}</small>` : ""}</h3><p>${skill.description || "技能说明尚未整理。"}</p>${renderDerivatives(skill)}</article>`).join("") : '<p>技能资料尚未整理。</p>'}</section></div></div>`;
 
   const galleryImages = [image, ...(general.derivativeImages || []).map((imageId) => images.find((item) => item.id === imageId))].filter(Boolean);
   if (galleryImages.length > 1) {
@@ -84,7 +86,6 @@ async function init() {
       });
       if (creditsElement) {
         creditsElement.innerHTML = [
-          general.designer ? `设计：${Array.isArray(general.designer) ? general.designer.map(esc).join("、") : esc(general.designer)}` : "",
           selected.author ? `制图：${esc(selected.author)}` : "",
           selected.illustrator ? `插画：${esc(selected.illustrator)}` : ""
         ].filter(Boolean).join("　·　");

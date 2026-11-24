@@ -30,6 +30,9 @@ async function init() {
   fillSelects();
   filters.querySelectorAll("[data-filter]").forEach((button) => button.classList.toggle("active", button.dataset.filter === state.pack));
   render();
+  if (validPack || selectedSubpack) {
+    requestAnimationFrame(() => document.getElementById("catalog")?.scrollIntoView({ block: "start", behavior: "instant" }));
+  }
 }
 function packOf(general) {
   return packs.find((pack) => pack.subpacks.some((sid) => subpacks.find((subpack) => subpack.id === sid)?.generals?.includes(general.id)));
