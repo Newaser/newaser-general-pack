@@ -1,0 +1,76 @@
+main {
+  color-scheme: light;
+  --color-prettylights-syntax-comment: #858176;
+  --color-prettylights-syntax-constant: #8d583d;
+  --color-prettylights-syntax-entity: #79523a;
+  --color-prettylights-syntax-storage-modifier-import: #5f6058;
+  --color-prettylights-syntax-entity-tag: #485548;
+  --color-prettylights-syntax-keyword: #a64b3b;
+  --color-prettylights-syntax-string: #485548;
+  --color-prettylights-syntax-variable: #a64b3b;
+  --color-btn-text: #272923;
+  --color-btn-bg: #ebe6db;
+  --color-btn-border: #d9d4c9;
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-inset-shadow: 0 0 transparent;
+  --color-btn-hover-bg: #e4ded1;
+  --color-btn-hover-border: #c9c2b5;
+  --color-btn-active-bg: #ddd6c8;
+  --color-btn-active-border: #b8afa0;
+  --color-btn-selected-bg: #e4ded1;
+  --color-btn-primary-text: #f4f0e7;
+  --color-btn-primary-bg: #a64b3b;
+  --color-btn-primary-border: #a64b3b;
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-inset-shadow: 0 0 transparent;
+  --color-btn-primary-hover-bg: #8f3f32;
+  --color-btn-primary-hover-border: #8f3f32;
+  --color-btn-primary-selected-bg: #8f3f32;
+  --color-btn-primary-selected-shadow: 0 0 transparent;
+  --color-btn-primary-disabled-text: #f4f0e7;
+  --color-btn-primary-disabled-bg: #c8a49b;
+  --color-btn-primary-disabled-border: #c8a49b;
+  --color-action-list-item-default-hover-bg: #ebe6db;
+  --color-segmented-control-bg: #ebe6db;
+  --color-segmented-control-button-bg: #f4f0e7;
+  --color-segmented-control-button-selected-border: #c9c2b5;
+  --color-fg-default: #272923;
+  --color-fg-muted: #74756c;
+  --color-fg-subtle: #89867c;
+  --color-canvas-default: #f4f0e7;
+  --color-canvas-overlay: #f4f0e7;
+  --color-canvas-inset: #ebe6db;
+  --color-canvas-subtle: #ebe6db;
+  --color-border-default: #d9d4c9;
+  --color-border-muted: #e4ded1;
+  --color-neutral-muted: #d9d4c9;
+  --color-accent-fg: #a64b3b;
+  --color-accent-emphasis: #a64b3b;
+  --color-accent-muted: #d6b185;
+  --color-accent-subtle: #f0e4d7;
+  --color-success-fg: #485548;
+  --color-attention-fg: #8d6e3e;
+  --color-attention-muted: #e8dcc4;
+  --color-attention-subtle: #f3eddf;
+  --color-danger-fg: #a64b3b;
+  --color-danger-muted: #dec0b9;
+  --color-danger-subtle: #f5e8e4;
+  --color-primer-shadow-inset: 0 0 transparent;
+  --color-scale-gray-7: #e4ded1;
+  --color-scale-blue-8: #f0e4d7;
+  --color-social-reaction-bg-hover: #ebe6db;
+  --color-social-reaction-bg-reacted-hover: #ead8c2;
+  --color-social-reaction-bg-reacted: #f0e4d7;
+  --font-family-sans: "Manrope", "Noto Serif SC", sans-serif;
+}
+
+main .pagination-loader-container {
+  background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line.svg");
+}
+
+.gsc-comment-box textarea,
+.gsc-comment-box .gsc-comment-box-textarea {
+  background-color: #ebe6db !important;
+  border-color: #c9c2b5 !important;
+  color: #272923 !important;
+}

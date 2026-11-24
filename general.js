@@ -97,6 +97,32 @@ async function init() {
       }
     }));
   }
+
+  const reviews = document.createElement("section");
+  reviews.className = "general-reviews";
+  reviews.innerHTML = '<h2>评论</h2><div class="giscus"></div>';
+  content.append(reviews);
+
+  const giscus = document.createElement("script");
+  giscus.src = "https://giscus.app/client.js";
+  giscus.async = true;
+  giscus.crossOrigin = "anonymous";
+  Object.entries({
+    "data-repo": "Newaser/newaser-general-pack",
+    "data-repo-id": "R_kgDOV5Sr3A",
+    "data-category": "General Reviews",
+    "data-category-id": "DIC_kwDOV5Sr3M4DL49J",
+    "data-mapping": "specific",
+    "data-term": general.id,
+    "data-strict": "0",
+    "data-reactions-enabled": "1",
+    "data-emit-metadata": "0",
+    "data-input-position": "bottom",
+    "data-theme": "https://cdn.jsdelivr.net/gh/Newaser/newaser-general-pack@master/giscus-theme.css",
+    "data-lang": "zh-CN",
+    "data-loading": "lazy"
+  }).forEach(([key, value]) => giscus.setAttribute(key, value));
+  reviews.querySelector(".giscus").append(giscus);
 }
 
 init().catch((error) => {

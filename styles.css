@@ -384,3 +384,6 @@ body{font-size:18px;line-height:1.75}
 .hero-card-window{position:absolute;inset:13px;display:block;overflow:hidden;z-index:1}
 .hero-card-window img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 18%}
 @media(max-width:760px){.hero-card-window{inset:12px}.hero-card-frame:before{inset:12px}}
+ .general-reviews{margin-top:58px;padding-top:10px;border-top:1px solid var(--line)}
+.general-reviews h2{font:600 25px var(--serif);border-bottom:1px solid var(--line);padding-bottom:12px}
+.general-reviews .giscus{min-height:120px}
