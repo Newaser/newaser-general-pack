@@ -75,10 +75,9 @@ main .pagination-loader-container {
   color: #272923 !important;
 }
 
-.gsc-header a[href*="/discussions/"],
-.gsc-comments-count > a[href*="/discussions/"],
-.gsc-reactions-count a[href*="/discussions/"],
-.gsc-comment-header a[href*="/discussions/"] {
+.gsc-reactions-count a,
+.gsc-comments-count a,
+.gsc-comment-author > a:not(.gsc-comment-author-avatar) {
   pointer-events: none !important;
   cursor: default !important;
   text-decoration: none !important;

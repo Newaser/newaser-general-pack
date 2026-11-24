@@ -118,7 +118,7 @@ async function init() {
     "data-reactions-enabled": "1",
     "data-emit-metadata": "0",
     "data-input-position": "bottom",
-    "data-theme": "https://cdn.jsdelivr.net/gh/Newaser/newaser-general-pack@master/giscus-theme.css",
+    "data-theme": "https://cdn.jsdelivr.net/gh/Newaser/newaser-general-pack@master/giscus-theme-v2.css",
     "data-lang": "zh-CN",
     "data-loading": "lazy"
   }).forEach(([key, value]) => giscus.setAttribute(key, value));
