@@ -452,6 +452,10 @@
     "derivatives": {
       "skills": [
         "zm__zhengbian"
+      ],
+      "rules": [
+        "virtual_damage",
+        "rest"
       ]
     }
   },
