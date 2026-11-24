@@ -1,0 +1,9 @@
+{
+  "name": "general-archive-wiki",
+  "version": "0.1.0",
+  "private": true,
+  "description": "个人三国杀武将扩展包 Wiki",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

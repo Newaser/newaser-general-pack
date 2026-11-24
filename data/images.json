@@ -1,229 +1,229 @@
 [
   {
     "id": "spr__machao",
-    "path": "image/general/spr__machao.png",
+    "path": "image/general/card/spr__machao.png",
     "author": "Newaser",
     "illustrator": "凝聚永恒"
   },
   {
     "id": "spr__machao#0",
-    "path": "image/general/spr__machao#0.png",
+    "path": "image/general/card/spr__machao#0.png",
     "author": "Newaser",
     "illustrator": "凝聚永恒"
   },
   {
     "id": "spr__zhugeliang",
-    "path": "image/general/spr__zhugeliang.png",
+    "path": "image/general/card/spr__zhugeliang.png",
     "author": "Newaser",
     "illustrator": "Mr丶J🍺"
   },
   {
     "id": "spr__guanyu",
-    "path": "image/general/spr__guanyu.png",
+    "path": "image/general/card/spr__guanyu.png",
     "author": "Newaser",
     "illustrator": "幽色工作室"
   },
   {
     "id": "spr__xuyou",
-    "path": "image/general/spr__xuyou.png",
+    "path": "image/general/card/spr__xuyou.png",
     "author": "Newaser",
     "illustrator": "君桓文化"
   },
   {
     "id": "spr__shenpei",
-    "path": "image/general/spr__shenpei.png",
+    "path": "image/general/card/spr__shenpei.png",
     "author": "Newaser",
     "illustrator": "YanBai"
   },
   {
     "id": "spr__caozhang",
-    "path": "image/general/spr__caozhang.png",
+    "path": "image/general/card/spr__caozhang.png",
     "author": "Newaser",
     "illustrator": "枭瞳"
   },
   {
     "id": "spr__guohuai",
-    "path": "image/general/spr__guohuai.png",
+    "path": "image/general/card/spr__guohuai.png",
     "author": "Newaser",
     "illustrator": "凝聚永恒"
   },
   {
     "id": "spr__zoushi",
-    "path": "image/general/spr__zoushi.png",
+    "path": "image/general/card/spr__zoushi.png",
     "author": "Newaser",
     "illustrator": "黑羽"
   },
   {
     "id": "spr__zhangliao",
-    "path": "image/general/spr__zhangliao.png",
+    "path": "image/general/card/spr__zhangliao.png",
     "author": "Newaser",
     "illustrator": "王强"
   },
   {
     "id": "spr__luoxian",
-    "path": "image/general/spr__luoxian.png",
+    "path": "image/general/card/spr__luoxian.png",
     "author": "Newaser",
     "illustrator": "匠人绘"
   },
   {
     "id": "spr__chendao",
-    "path": "image/general/spr__chendao.png",
+    "path": "image/general/card/spr__chendao.png",
     "author": "Newaser",
     "illustrator": "猎枭"
   },
   {
     "id": "spr__chengui",
-    "path": "image/general/spr__chengui.png",
+    "path": "image/general/card/spr__chengui.png",
     "author": "Newaser",
     "illustrator": "凝聚永恒"
   },
   {
     "id": "spr__chenwudongxi",
-    "path": "image/general/spr__chenwudongxi.png",
+    "path": "image/general/card/spr__chenwudongxi.png",
     "author": "Newaser",
     "illustrator": "彭宇"
   },
   {
     "id": "spr__caochun",
-    "path": "image/general/spr__caochun.png",
+    "path": "image/general/card/spr__caochun.png",
     "author": "Newaser",
     "illustrator": "SY"
   },
   {
     "id": "spr__wangtaowangyue",
-    "path": "image/general/spr__wangtaowangyue.png",
+    "path": "image/general/card/spr__wangtaowangyue.png",
     "author": "Newaser",
     "illustrator": "木美人"
   },
   {
     "id": "spr__sunchen",
-    "path": "image/general/spr__sunchen.png",
+    "path": "image/general/card/spr__sunchen.png",
     "author": "Newaser",
     "illustrator": "depp"
   },
   {
     "id": "spr__zhaoyun",
-    "path": "image/general/spr__zhaoyun.png",
+    "path": "image/general/card/spr__zhaoyun.png",
     "author": "Newaser",
     "illustrator": "太玄工作室"
   },
   {
     "id": "spr__yuejin",
-    "path": "image/general/spr__yuejin.png",
+    "path": "image/general/card/spr__yuejin.png",
     "author": "Newaser",
     "illustrator": "君桓文化"
   },
   {
     "id": "spr__simalang",
-    "path": "image/general/spr__simalang.png",
+    "path": "image/general/card/spr__simalang.png",
     "author": "Newaser",
     "illustrator": "Sky"
   },
   {
     "id": "spr__chengpu",
-    "path": "image/general/spr__chengpu.png",
+    "path": "image/general/card/spr__chengpu.png",
     "author": "Newaser",
     "illustrator": "聚一_墨三千"
   },
   {
     "id": "spr__chengpu#0",
-    "path": "image/general/spr__chengpu#0.png",
+    "path": "image/general/card/spr__chengpu#0.png",
     "author": "Newaser",
     "illustrator": "聚一_墨三千"
   },
   {
     "id": "spr__zhenji",
-    "path": "image/general/spr__zhenji.png",
+    "path": "image/general/card/spr__zhenji.png",
     "author": "Newaser",
     "illustrator": "石蝉"
   },
   {
     "id": "spr__jiaxu",
-    "path": "image/general/spr__jiaxu.png",
+    "path": "image/general/card/spr__jiaxu.png",
     "author": "Newaser",
     "illustrator": "东涂西画"
   },
   {
     "id": "spr__yanjun",
-    "path": "image/general/spr__yanjun.png",
+    "path": "image/general/card/spr__yanjun.png",
     "author": "Newaser",
     "illustrator": "YanBai"
   },
   {
     "id": "zm__simayi",
-    "path": "image/general/zm__simayi.png",
+    "path": "image/general/card/zm__simayi.png",
     "author": "Newaser",
     "illustrator": "黯荧岛"
   },
   {
     "id": "zm__simayi#0",
-    "path": "image/general/zm__simayi#0.png",
+    "path": "image/general/card/zm__simayi#0.png",
     "author": "Newaser",
     "illustrator": "黯荧岛"
   },
   {
     "id": "zm__madai",
-    "path": "image/general/zm__madai.png",
+    "path": "image/general/card/zm__madai.png",
     "author": "Newaser",
     "illustrator": "大佬荣"
   },
   {
     "id": "zm__ganning",
-    "path": "image/general/zm__ganning.png",
+    "path": "image/general/card/zm__ganning.png",
     "author": "Newaser",
     "illustrator": "晴空万里阿杜根"
   },
   {
     "id": "zm__taishici",
-    "path": "image/general/zm__taishici.png",
+    "path": "image/general/card/zm__taishici.png",
     "author": "Newaser",
     "illustrator": "凡果"
   },
   {
     "id": "zm__taishici#0",
-    "path": "image/general/zm__taishici#0.png",
+    "path": "image/general/card/zm__taishici#0.png",
     "author": "Newaser",
     "illustrator": "凡果"
   },
   {
     "id": "zm__luxun",
-    "path": "image/general/zm__luxun.png",
+    "path": "image/general/card/zm__luxun.png",
     "author": "Newaser",
     "illustrator": "凡果"
   },
   {
     "id": "zm__zhuran",
-    "path": "image/general/zm__zhuran.png",
+    "path": "image/general/card/zm__zhuran.png",
     "author": "Newaser",
     "illustrator": "北辰菌"
   },
   {
     "id": "zm__sunjian",
-    "path": "image/general/zm__sunjian.png",
+    "path": "image/general/card/zm__sunjian.png",
     "author": "Newaser",
     "illustrator": "铁杵文化"
   },
   {
     "id": "zm__sunjian#0",
-    "path": "image/general/zm__sunjian#0.png",
+    "path": "image/general/card/zm__sunjian#0.png",
     "author": "Newaser",
     "illustrator": "铁杵文化"
   },
   {
     "id": "zm__jiangwei",
-    "path": "image/general/zm__jiangwei.png",
+    "path": "image/general/card/zm__jiangwei.png",
     "author": "Newaser",
     "illustrator": "君桓文化"
   },
   {
     "id": "zm__jiangwei#0",
-    "path": "image/general/zm__jiangwei#0.png",
+    "path": "image/general/card/zm__jiangwei#0.png",
     "author": "Newaser",
     "illustrator": "凝聚永恒"
   },
   {
     "id": "zm__dengai",
-    "path": "image/general/zm__dengai.png",
+    "path": "image/general/card/zm__dengai.png",
     "author": "Newaser",
     "illustrator": "铁杵文化"
   }
