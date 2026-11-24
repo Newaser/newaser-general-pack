@@ -39,10 +39,92 @@ function setupGeneralCarousel(packs, subpacks, generals, images) {
   const randomButton = document.getElementById("random-general");
   if (!art || !image || !link || !packLabel || !generals.length) return;
 
+  const mobileViewport = window.matchMedia("(max-width: 760px)");
+  const fitMobileCardFrame = () => {
+    if (!mobileViewport.matches) {
+      link.style.removeProperty("width");
+      link.style.removeProperty("height");
+      return;
+    }
+    if (!image.naturalWidth || !image.naturalHeight) return;
+
+    const frameStyle = getComputedStyle(link);
+    const windowStyle = getComputedStyle(link.querySelector(".hero-card-window"));
+    const horizontalPadding = parseFloat(windowStyle.left) + parseFloat(windowStyle.right);
+    const verticalPadding = parseFloat(windowStyle.top) + parseFloat(windowStyle.bottom);
+    const ratio = image.naturalWidth / image.naturalHeight;
+    const maxWidth = Math.min(260, art.clientWidth * 0.68);
+    const top = parseFloat(frameStyle.top) || 58;
+    const maxHeight = Math.max(180, art.clientHeight - top - 28);
+    const width = Math.min(maxWidth, ratio * (maxHeight - verticalPadding) + horizontalPadding);
+    const height = (width - horizontalPadding) / ratio + verticalPadding;
+
+    link.style.width = `${width}px`;
+    link.style.height = `${height}px`;
+  };
+  image.addEventListener("load", fitMobileCardFrame);
+  window.addEventListener("resize", fitMobileCardFrame);
+  mobileViewport.addEventListener?.("change", fitMobileCardFrame);
+
   const savedGeneralId = sessionStorage.getItem("hero-featured-general-id");
   const savedIndex = generals.findIndex((general) => general.id === savedGeneralId);
   const defaultIndex = generals.findIndex((general) => general.id === "spr__machao");
   let currentIndex = savedIndex >= 0 ? savedIndex : Math.max(0, defaultIndex);
+  const requestedArtwork = new Map();
+  const artworkForGeneral = (index) => {
+    const general = generals[(index + generals.length) % generals.length];
+    return images.find((item) => item.id === general?.images?.main);
+  };
+  const artworkUrl = (path) => new URL(path, document.baseURI).href;
+  const preloadArtwork = (index) => {
+    const artwork = artworkForGeneral(index);
+    if (!artwork) return;
+    const url = artworkUrl(artwork.path);
+    const activeUrls = [image.currentSrc, image.src]
+      .filter(Boolean)
+      .map(artworkUrl);
+    if (activeUrls.includes(url) || requestedArtwork.has(url)) return;
+
+    const preloader = new Image();
+    preloader.decoding = "async";
+    if ("fetchPriority" in preloader) preloader.fetchPriority = "low";
+    preloader.src = artwork.path;
+    requestedArtwork.set(url, preloader);
+  };
+  const preloadAdjacentArtwork = () => {
+    if (generals.length < 2) return;
+    preloadArtwork(currentIndex - 1);
+    preloadArtwork(currentIndex + 1);
+  };
+  let backgroundPreloadStarted = false;
+  const startBackgroundPreload = () => {
+    if (backgroundPreloadStarted) return;
+    backgroundPreloadStarted = true;
+    const queue = [];
+    for (let distance = 2; distance < generals.length; distance += 1) {
+      queue.push(currentIndex + distance);
+    }
+
+    const preloadNextWhenIdle = () => {
+      if (!queue.length) return;
+      if (document.visibilityState === "hidden") {
+        document.addEventListener("visibilitychange", preloadNextWhenIdle, { once: true });
+        return;
+      }
+      const loadOne = () => {
+        if (!queue.length) return;
+        preloadArtwork(queue.shift());
+        preloadNextWhenIdle();
+      };
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadOne, { timeout: 1800 });
+      } else {
+        window.setTimeout(loadOne, 350);
+      }
+    };
+    preloadNextWhenIdle();
+  };
+  image.addEventListener("load", startBackgroundPreload);
   const showGeneral = (index, direction = 0, effect = "slide") => {
     currentIndex = (index + generals.length) % generals.length;
     const general = generals[currentIndex];
@@ -52,8 +134,9 @@ function setupGeneralCarousel(packs, subpacks, generals, images) {
     const subpack = subpacks.find((item) => item.generals?.includes(general.id));
     const pack = packs.find((item) => item.subpacks.includes(subpack?.id));
     image.src = artwork.path;
+    requestAnimationFrame(fitMobileCardFrame);
     image.alt = `${general.name}武将卡面`;
-    image.fetchPriority = currentIndex === 0 ? "high" : "auto";
+    image.fetchPriority = "high";
     image.classList.remove("slide-in-from-left", "slide-in-from-right", "random-reveal");
     image.onanimationend = () => image.classList.remove("slide-in-from-left", "slide-in-from-right", "random-reveal");
     if (effect === "random") {
@@ -69,6 +152,7 @@ function setupGeneralCarousel(packs, subpacks, generals, images) {
     packLabel.href = pack && subpack
       ? `catalog.html?pack=${encodeURIComponent(pack.id)}&subpack=${encodeURIComponent(subpack.id)}`
       : "catalog.html";
+    preloadAdjacentArtwork();
   };
 
   art.querySelectorAll("[data-carousel]").forEach((button) => button.addEventListener("click", () => {
@@ -101,6 +185,7 @@ function setupGeneralCarousel(packs, subpacks, generals, images) {
     touchStartX = null;
   }, { passive: true });
   showGeneral(currentIndex);
+  if (image.complete && image.naturalWidth) startBackgroundPreload();
 }
 loadPackCounts();
 window.addEventListener("pageshow", (event) => { if (event.persisted) randomizeHomepagePackArtwork(); });
