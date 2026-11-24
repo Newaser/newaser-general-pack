@@ -67,6 +67,7 @@
 | `shield` | number | 否 | 武将设计上的护甲值。 |
 | `skills` | string[] | 否 | 武将拥有的技能 ID 列表。 |
 | `designer` | string 或 string[] | 否 | 武将设计者；多人时可使用字符串数组。 |
+| `note` | string | 否 | 对武将的批注或补充备注。 |
 | `images` | object | 否 | 武将图片；包含可选的 `main` 主图 ID、`derivatives` 衍生图片 ID 列表和 `illustration` 插画图片 ID。 |
 
 ## 技能 `skill`

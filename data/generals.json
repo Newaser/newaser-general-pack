@@ -112,6 +112,7 @@
       "spr__jiangchi"
     ],
     "designer": "Newaser",
+    "note": "“以王之雄武，吞并巴蜀，如鸱衔腐鼠耳！”\n——曹丕",
     "images": {
       "main": "spr__caozhang",
       "illustration": "spr__caozhang#i"
@@ -227,6 +228,7 @@
       "spr__congshi"
     ],
     "designer": "Newaser",
+    "note": "“不过略施小计，聊戏莽夫耳。”",
     "images": {
       "main": "spr__chengui",
       "illustration": "spr__chengui#i"
@@ -265,6 +267,7 @@
       "spr__shanjia"
     ],
     "designer": "Newaser",
+    "note": "“纯之比，何可复得！吾独不中督邪？”\n——曹操",
     "images": {
       "main": "spr__caochun",
       "illustration": "spr__caochun#i"
