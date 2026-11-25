@@ -156,6 +156,10 @@ body{font-size:18px;line-height:1.75}
 .derivative-section.derivative-rules>h4{color:#405f75;border-color:#c0cdd7}
 /* Give each derivative category its own quote panel */
 .skill-derivatives{margin-top:15px;padding:0;background:transparent;border:0}
+.derivative-mention{color:#3e6549;text-decoration:underline;text-decoration-color:#91a895;text-decoration-thickness:1px;text-underline-offset:3px;cursor:pointer}
+.derivative-mention:hover{color:#264b32;text-decoration-color:currentColor}
+.derivative-item[id]{scroll-margin-top:28px;transition:box-shadow .25s,background-color .25s}
+.derivative-item.derivative-target-highlight{background:#fff4d7;box-shadow:0 0 0 8px #fff4d7}
 .skill-derivatives>.derivative-section,.derivative-body .derivative-section{margin:12px 0 0;padding:12px 14px;border-left:3px solid;border-radius:0 3px 3px 0}
 .derivative-section.derivative-skills{background:#e8efe9;border-color:#7e9a84}
 .derivative-section.derivative-skills>h4{color:#3e6549;border-color:#bfd0c1}

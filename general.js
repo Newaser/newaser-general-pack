@@ -36,6 +36,46 @@ async function init() {
 
   const entitySets = { skills, cards, rules };
   const derivativeLabels = { skills: "衍生技能", cards: "衍生游戏牌", rules: "衍生机制" };
+  const derivativeTargets = new Map();
+  const collectDerivativeTargets = (entity, kind, ancestors = new Set()) => {
+    const key = `${kind}:${entity.id}`;
+    if (ancestors.has(key)) return;
+    const nextAncestors = new Set(ancestors);
+    nextAncestors.add(key);
+    (entity.derivatives?.skills || []).forEach((entityId) => {
+      const child = skills.find((item) => item.id === entityId) || { id: entityId, name: entityId };
+      const childKey = `skills:${child.id}`;
+      if (!derivativeTargets.has(child.name)) derivativeTargets.set(child.name, `derivative-${encodeURIComponent(childKey)}`);
+      collectDerivativeTargets(child, "skills", nextAncestors);
+    });
+    (entity.derivatives?.cards || []).forEach((entityId) => {
+      const child = cards.find((item) => item.id === entityId) || { id: entityId, name: entityId };
+      const childKey = `cards:${child.id}`;
+      if (!derivativeTargets.has(child.name)) derivativeTargets.set(child.name, `derivative-${encodeURIComponent(childKey)}`);
+      collectDerivativeTargets(child, "cards", nextAncestors);
+    });
+    (entity.derivatives?.rules || []).forEach((entityId) => {
+      const child = rules.find((item) => item.id === entityId) || { id: entityId, name: entityId };
+      const childKey = `rules:${child.id}`;
+      if (!derivativeTargets.has(child.name)) derivativeTargets.set(child.name, `derivative-${encodeURIComponent(childKey)}`);
+      collectDerivativeTargets(child, "rules", nextAncestors);
+    });
+  };
+  generalSkills.forEach((skill) => collectDerivativeTargets(skill, "skills"));
+  const linkDerivativeMentions = (description) => {
+    const names = [...derivativeTargets.keys()].filter(Boolean).sort((a, b) => b.length - a.length);
+    if (!names.length) return description || "技能说明尚未整理。";
+    const source = description || "技能说明尚未整理。";
+    const matcher = new RegExp(names.map((name) => name.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")).join("|"), "g");
+    const linkedNames = new Set();
+    return source.split(/(<[^>]*>)/g).map((part) => part.startsWith("<")
+      ? part
+      : part.replace(matcher, (name) => {
+        if (linkedNames.has(name)) return name;
+        linkedNames.add(name);
+        return `<a class="derivative-mention" href="#${derivativeTargets.get(name)}">${name}</a>`;
+      })).join("");
+  };
   const renderDerivativeGroups = (entity, ancestors, depth) => {
     if (depth >= 16) return '<p class="derivative-stop">衍生链路过深，已停止继续展开。</p>';
     return Object.entries(derivativeLabels).map(([kind, label]) => {
@@ -60,7 +100,7 @@ async function init() {
       ? `<div class="derivative-card-type">${esc(entity.type)}${entity.subtype ? ` · ${esc(entity.subtype)}` : ""}</div>`
       : "";
     const nested = renderDerivativeGroups(entity, nextAncestors, depth + 1);
-    return `<article class="derivative-item"><div class="derivative-meta"><span class="derivative-name">${esc(entity.name)}</span>${tags}${cardType}</div><div class="derivative-body"><p>${entity.description || "说明尚未整理。"}</p>${nested}</div></article>`;
+    return `<article class="derivative-item" id="derivative-${encodeURIComponent(key)}"><div class="derivative-meta"><span class="derivative-name">${esc(entity.name)}</span>${tags}${cardType}</div><div class="derivative-body"><p>${entity.description || "说明尚未整理。"}</p>${nested}</div></article>`;
   };
   const renderDerivatives = (skill) => {
     const groups = renderDerivativeGroups(skill, new Set([`skills:${skill.id}`]), 0);
@@ -68,7 +108,19 @@ async function init() {
   };
 
   document.title = `${general.name} · 将册`;
-  content.innerHTML = `<div class="detail-layout"><div class="detail-art"><div class="physical-card">${portrait}</div>${credits ? `<p class="image-credit">${credits}</p>` : ""}</div><div class="detail-copy"><p class="detail-code">${esc(general.code || pack?.name || "")}</p><div class="detail-name-row"><div class="detail-name-main"><h1>${esc(general.name)}</h1>${general.title ? `<p class="detail-title">「${esc(general.title)}」</p>` : ""}</div>${packContext ? `<div class="detail-context"><a class="detail-pack" href="${esc(packCatalogUrl)}" aria-label="在武将图鉴中查看${esc(packContext)}">${esc(packContext)}</a>${designer ? `<p class="detail-designer">${designer}</p>` : ""}</div>` : designer ? `<p class="detail-designer">${designer}</p>` : ""}</div>${note}<div class="detail-stats"><div><small>势力</small><b>${esc(general.kingdom)}${general.subkingdom ? ` / ${esc(general.subkingdom)}` : ""}</b></div><div><small>性别</small><b>${esc(general.gender)}</b></div><div><small>体力</small><b>${esc(general.hp)} / ${esc(general.maxHp)}${general.shield ? `　护甲 ${esc(general.shield)}` : ""}</b></div></div><section class="detail-skills"><h2>技能</h2>${generalSkills.length ? generalSkills.map((skill) => `<article class="skill-entry"><h3>${esc(skill.name)}${(skill.tags || []).length ? `<small>${skill.tags.map(esc).join(" · ")}</small>` : ""}</h3><p>${skill.description || "技能说明尚未整理。"}</p>${renderDerivatives(skill)}</article>`).join("") : '<p>技能资料尚未整理。</p>'}</section></div></div>`;
+  content.innerHTML = `<div class="detail-layout"><div class="detail-art"><div class="physical-card">${portrait}</div>${credits ? `<p class="image-credit">${credits}</p>` : ""}</div><div class="detail-copy"><p class="detail-code">${esc(general.code || pack?.name || "")}</p><div class="detail-name-row"><div class="detail-name-main"><h1>${esc(general.name)}</h1>${general.title ? `<p class="detail-title">「${esc(general.title)}」</p>` : ""}</div>${packContext ? `<div class="detail-context"><a class="detail-pack" href="${esc(packCatalogUrl)}" aria-label="在武将图鉴中查看${esc(packContext)}">${esc(packContext)}</a>${designer ? `<p class="detail-designer">${designer}</p>` : ""}</div>` : designer ? `<p class="detail-designer">${designer}</p>` : ""}</div>${note}<div class="detail-stats"><div><small>势力</small><b>${esc(general.kingdom)}${general.subkingdom ? ` / ${esc(general.subkingdom)}` : ""}</b></div><div><small>性别</small><b>${esc(general.gender)}</b></div><div><small>体力</small><b>${esc(general.hp)} / ${esc(general.maxHp)}${general.shield ? `　护甲 ${esc(general.shield)}` : ""}</b></div></div><section class="detail-skills"><h2>技能</h2>${generalSkills.length ? generalSkills.map((skill) => `<article class="skill-entry"><h3>${esc(skill.name)}${(skill.tags || []).length ? `<small>${skill.tags.map(esc).join(" · ")}</small>` : ""}</h3><p>${linkDerivativeMentions(skill.description)}</p>${renderDerivatives(skill)}</article>`).join("") : '<p>技能资料尚未整理。</p>'}</section></div></div>`;
+
+  content.addEventListener("click", (event) => {
+    const link = event.target.closest("a.derivative-mention");
+    if (!link) return;
+    const target = content.querySelector(link.getAttribute("href"));
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "center" });
+    history.replaceState(null, "", link.getAttribute("href"));
+    target.classList.add("derivative-target-highlight");
+    window.setTimeout(() => target.classList.remove("derivative-target-highlight"), 1500);
+  });
 
   const galleryImages = [illustration, mainImage, ...(general.images?.derivatives || []).map((imageId) => images.find((item) => item.id === imageId))].filter(Boolean);
   if (galleryImages.length > 1) {
